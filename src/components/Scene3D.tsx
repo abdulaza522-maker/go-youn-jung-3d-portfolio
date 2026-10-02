@@ -5,6 +5,16 @@ import { Float, Image as R3FImage, Environment, Sparkles } from '@react-three/dr
 import { Suspense, useRef } from 'react';
 import * as THREE from 'three';
 
+const DEFAULT_IMAGES = [
+  'images/img1.jpg',
+  'images/img2.jpg',
+  'images/img3.jpg',
+  'images/img4.jpg',
+  'images/img5.jpg',
+  'images/img6.jpg',
+  'images/img7.jpg',
+];
+
 function GalleryCards({ images }) {
   const root = useRef(null);
   useFrame((state, delta) => {
@@ -36,7 +46,7 @@ function GalleryCards({ images }) {
   );
 }
 
-export default function Scene3D({ images }) {
+export default function Scene3D({ images = DEFAULT_IMAGES }) {
   return (
     <Canvas camera={{ position: [0, 0, 7.3], fov: 42 }} dpr={[1, 1.6]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={1.4} />

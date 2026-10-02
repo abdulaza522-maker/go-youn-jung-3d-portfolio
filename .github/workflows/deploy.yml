@@ -14,7 +14,7 @@ jobs:
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .next/
+          path: out/
   deploy:
     needs: build-and-deploy
     permissions:
